@@ -47,6 +47,10 @@ def translate():
     translated_text = GoogleTranslator(source="auto", target=data["lang"]).translate(data["text"])
     return jsonify({"translated_text": translated_text})
 
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({"message": "Flask Backend is Running!"})
+
 
 if __name__ == "__main__":
     app.run(debug=True)
